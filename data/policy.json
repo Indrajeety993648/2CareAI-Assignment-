@@ -1,0 +1,5 @@
+{
+  "policy_version": "baseline-1",
+  "scope": ["routine primary care", "routine dermatology"],
+  "safety_rules": []
+}
