@@ -90,12 +90,13 @@ asserts the unseen phrase is learned and the gate holds.
   slot IDs, confirmation events, actual tool results, handoffs, and safety
   closure. Transcript text alone cannot prove that the backend did not book an
   appointment.
-- **Improvement is bounded and inspectable.** A failed urgent scenario maps to
-  a typed repair in a small repair catalog. The patch adds phrase triggers and a
-  stop-and-escalate action; it does not rewrite code or mutate the evaluator.
-  Fixed scenarios act as regression guards. This is a deliberately small,
-  auditable policy-learning loop rather than a claim of open-ended model
-  self-training.
+- **Improvement is derived and gated.** A failed urgent scenario is analyzed and
+  a proposer derives the escalation triggers from the patient's actual words — it
+  does not look them up in a fixed catalog, rewrite code, or mutate the evaluator.
+  The action is system-fixed, and a regression gate promotes the change only if it
+  raises the score with zero regressions. Previously passing scenarios act as
+  guards. This is a deliberately small, auditable policy-learning loop rather than
+  a claim of open-ended model self-training.
 
 ## Limits and assumptions
 
